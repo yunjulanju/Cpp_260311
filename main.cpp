@@ -2,17 +2,26 @@
 
 using namespace std;
 
-
-string ReplaceWord(string Word, int Index, char ReplaceWord)
+int LengthWord(char* Word)
 {
-	Word[Index] = ReplaceWord;
-
-	return Word;
+	for(int i=0; i>=0; i++)
+	{
+		if (Word[i] == '\0')
+		{
+			return i;
+		}
+	}
 }
 
-int FindWordIndex(string Word, char FindWord)
+
+void ReplaceWord(char* Word, int Index, char ReplaceWord)
 {
-	for (int i = 0; i < Word.length(); i++)
+	Word[Index] = ReplaceWord;
+}
+
+int FindWordIndex(char* Word, char FindWord, int Leng)
+{
+	for (int i = 0; i < Leng; i++)
 	{
 		if (Word[i] == FindWord)
 		{
@@ -27,11 +36,17 @@ int main()
 {
 
 	//문자열 
-	string Words = "Worlds";
+	char Words[7] = {'W', 'o', 'r', 'l','d','s', '\0'};
 
-	cout << "words의 길이 " << Words.length() << endl;
-	cout << "words 특정 문자를 특정 문자로 바꾸기 " << ReplaceWord(Words, 3, 'x') << endl;
-	cout << "words 단어 찾기 " << FindWordIndex(Words, 'l') << endl;
+	cout << "Words 의 길이 " << LengthWord(Words) << endl;
+
+	int LengWord = LengthWord(Words);
+
+	ReplaceWord(Words, 3, 'x');
+	cout << "Words 특정 문자를 특정 문자로 바꾸기 ReplaceWord(Words, 3, 'x') : " << Words << endl;
+
+	cout << "Words 단어 찾기 'w' " << FindWordIndex(Words, 'w', LengWord) << endl;
+	cout << "Words 단어 찾기 'W' " << FindWordIndex(Words, 'W', LengWord) << endl;
 
 
 	return 0;
