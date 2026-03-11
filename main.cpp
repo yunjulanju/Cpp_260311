@@ -10,11 +10,11 @@ string ReplaceWord(string Word, int Index, char ReplaceWord)
 	return Word;
 }
 
-int FindWordIndex(string word, char FindWord)
+int FindWordIndex(string Word, char FindWord)
 {
-	for (int i = 0; i < word.length(); i++)
+	for (int i = 0; i < Word.length(); i++)
 	{
-		if (word[i] == FindWord)
+		if (Word[i] == FindWord)
 		{
 			return i;
 		}
