@@ -36,7 +36,8 @@ int main()
 {
 
 	//문자열 
-	char Words[7] = {'W', 'o', 'r', 'l','d','s', '\0'};
+	//char Words[7] = {'W', 'o', 'r', 'l','d','s', '\0'};
+	char Words[7] = "Worlds";
 
 	cout << "Words 의 길이 " << LengthWord(Words) << endl;
 
