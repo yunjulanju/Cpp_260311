@@ -12,6 +12,10 @@ int main()
 	cin >> Size;
 
 	int* NumArray = new int[Size];
+	if (!NumArray)
+	{
+		return -1;
+	}
 	cout << "new ÈÄ NumArray : "<< NumArray << endl;
 
 	for (int i = 0; i < Size; i++)
